@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    /* One easing across the whole site — motion that reads as authored
+       rather than as whatever the browser happened to default to. */
+    --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* The sticky navbar is 72px; without this an in-page anchor lands with
+       its heading hidden underneath it. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-paper-100 text-ink-900 font-sans antialiased;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Instrument Serif has enough stroke contrast that browsers snapping it
+     to the pixel grid makes the thin strokes shimmer at display sizes. */
+  .font-display {
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-ink-900 text-paper-100;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brass/70 ring-offset-2 ring-offset-paper-100;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-paper-200;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-line-strong rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* ---------------------------------------------------------------
+     Section rhythm
+
+     One vertical measure for every band on the page, set here rather
+     than chosen per component.
+
+     It matters that this is central. Two adjacent sections each pay
+     their own padding and those numbers ADD, so a py-28 next to a py-44
+     puts 288px of nothing between two paragraphs — at that size a gap
+     stops reading as air and starts reading as a section that failed to
+     load. 96px a side on a laptop, so any two sections are 192px apart,
+     always the same. Retune the whole site from these three numbers.
+     --------------------------------------------------------------- */
+  .section-y {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* A band that is texture rather than argument sits tighter than a
+     section with something to say. */
+  .band-y {
+    @apply py-12 lg:py-14;
+  }
+
+  /* ---------------------------------------------------------------
+     Type treatments
+     --------------------------------------------------------------- */
+
+  /* The brand's one piece of type ornament: a brushed-metal headline.
+
+     A metal badge on a white wall is read by its SHADOWS, not by its
+     highlights: the letterform is dark and what travels across it is a
+     lighter band where the bevel turns to the light. So the ramp is
+     inverted from the dark version — deep at top and bottom, open in the
+     middle — and it never lightens past the mid stop, because a pale
+     band inside a thin serif stroke is the point at which the word stops
+     being readable at a glance. */
+  .metal-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      177deg,
+      #0a0a09 0%,
+      #1d1c19 26%,
+      #45423d 52%,
+      #1a1917 68%,
+      #0a0a09 100%
+    );
+  }
+
+  /* Reserved for the one or two words a page wants to sing. The pan is
+     slow enough to be felt rather than watched. */
+  .brass-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      110deg,
+      #171614 0%,
+      #4a4036 28%,
+      #d4a94a 50%,
+      #4a4036 72%,
+      #171614 100%
+    );
+    background-size: 220% auto;
+    animation: brass-pan 7s ease-in-out infinite;
+  }
+
+  @keyframes brass-pan {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Hero two-tone type, wide screens only. The masks are traced from
+     garage-hero.jpg by scripts/make-hero-mask.py; `cover` plus the same
+     left anchor as the photo's object-position puts them on the
+     photograph exactly, so ink shows only over the wall and paper only
+     over the brick. Change the photo's crop in Hero.tsx and these must
+     change with it.
+
+     Tall screens get the portrait photograph, whose wall is light all
+     the way across: the ink copy is shown unmasked, the paper copy not
+     at all. */
+  @media (orientation: landscape) {
+    .hero-mask-light,
+    .hero-mask-dark {
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: 0% 50%;
+      mask-position: 0% 50%;
+    }
+    .hero-mask-light {
+      -webkit-mask-image: url('/images/hero/hero-mask-light.png');
+      mask-image: url('/images/hero/hero-mask-light.png');
+    }
+    .hero-mask-dark {
+      -webkit-mask-image: url('/images/hero/hero-mask-dark.png');
+      mask-image: url('/images/hero/hero-mask-dark.png');
+    }
+  }
+  @media (orientation: portrait) {
+    .hero-mask-dark {
+      display: none;
+    }
+  }
+
+  /* ---------------------------------------------------------------
+     Surfaces & materials
+     --------------------------------------------------------------- */
+
+  /* Paper tooth.
+
+     A turbulence field at a twentieth of normal strength, multiplied so
+     it can only ever darken: enough to stop a large white panel reading
+     as a flat digital fill, far too little to see as speckle. It
+     multiplies rather than overlays because overlay lifts the dark half
+     of the field into mid-grey and the page goes grubby. */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* A border that fades. Flat 1px borders look cheap; this is the edge a
+     card casts onto the sheet beneath it, firmest where the card meets
+     the page at the bottom and almost gone along the lit top. */
+  .hairline {
+    position: relative;
+  }
+  .hairline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      160deg,
+      rgba(23, 22, 20, 0.07) 0%,
+      rgba(23, 22, 20, 0.1) 28%,
+      rgba(23, 22, 20, 0.13) 55%,
+      rgba(23, 22, 20, 0.16) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* The brass edge, for the few panels that earn a flourish. */
+  .hairline-brass::before {
+    background: linear-gradient(
+      160deg,
+      rgba(212, 169, 74, 0.72) 0%,
+      rgba(212, 169, 74, 0.32) 30%,
+      rgba(23, 22, 20, 0.08) 60%,
+      rgba(212, 169, 74, 0.44) 100%
+    );
+  }
+
+  /* Frosted panel. On a light page the frost has to be mostly opaque
+     white — a 3% tint over paper is invisible — so the blur is doing the
+     work of separating it from whatever scrolls underneath, and the
+     hairline does the rest. */
+  .glass {
+    @apply bg-paper-100/80 backdrop-blur-xl;
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+      0 1px 0 0 rgba(23, 22, 20, 0.06),
+      0 24px 56px -28px rgba(23, 22, 20, 0.18);
+  }
+
+  /* ---------------------------------------------------------------
+     Masks
+     --------------------------------------------------------------- */
+
+  .reveal-mask {
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
+  }
+
+  /* Softens the hard cut where a marquee leaves the viewport. */
+  .mask-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+
+  /* Google's embed ships the right way round on a light page, so nothing
+     here is inverted. All that is left is a touch of desaturation, which
+     pulls Google's motorway yellows and park greens back towards this
+     site's own quieter neutrals. */
+  .map-frame {
+    filter: saturate(0.8) contrast(1.02);
+  }
+
+  /* A scrollbar for panels inside the page — the 10px chrome one is far
+     too loud on a short list sitting inside a card. */
+  .scroll-slim {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(23, 22, 20, 0.16) transparent;
+  }
+  .scroll-slim::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scroll-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scroll-slim::-webkit-scrollbar-thumb {
+    background: rgba(23, 22, 20, 0.14);
+    border-radius: 999px;
+  }
+  .scroll-slim:hover::-webkit-scrollbar-thumb {
+    background: rgba(23, 22, 20, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
