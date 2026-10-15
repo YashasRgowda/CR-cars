@@ -3,20 +3,6 @@
   "_license": "Unsplash License \u2014 free for commercial use, no attribution required. https://unsplash.com/license",
   "images": [
     {
-      "out": "service/mechanic-at-work.jpg",
-      "id": "photo-1615906655593-ad0386982a0f",
-      "w": 1600,
-      "h": 1200,
-      "alt": "A technician working under the bonnet by lamplight"
-    },
-    {
-      "out": "service/car-on-lift.jpg",
-      "id": "photo-1723099971299-3789db53604c",
-      "w": 1600,
-      "h": 1200,
-      "alt": "A car raised on a two-post lift seen from below"
-    },
-    {
       "out": "service/suspension-work.jpg",
       "id": "photo-1702146713858-8e7d1cc29fe8",
       "w": 1600,
@@ -38,13 +24,6 @@
       "alt": "A red car on a workshop lift above a second car"
     },
     {
-      "out": "service/bay-wide.jpg",
-      "id": "photo-1605822167835-d32696aef686",
-      "w": 1800,
-      "h": 1013,
-      "alt": "A car in a brightly lit service bay"
-    },
-    {
       "out": "service/hands-engine.jpg",
       "id": "photo-1619642737579-a7474bee1044",
       "w": 1400,
@@ -57,20 +36,6 @@
       "w": 1600,
       "h": 1200,
       "alt": "A car raised on a workshop lift"
-    },
-    {
-      "out": "modification/wrapped-car.jpg",
-      "id": "photo-1609550939894-0ba33d96a6b1",
-      "w": 1800,
-      "h": 1200,
-      "alt": "A coupe finished in a colour-shifting green and gold wrap"
-    },
-    {
-      "out": "modification/wrap-gradient.jpg",
-      "id": "photo-1699078042053-ecd9166d3f26",
-      "w": 1600,
-      "h": 1200,
-      "alt": "A sedan in a graduated orange and grey wrap"
     },
     {
       "out": "modification/wrap-applying.jpg",
@@ -87,32 +52,11 @@
       "alt": "Protective film being fitted around a headlight"
     },
     {
-      "out": "modification/film-blue.jpg",
-      "id": "photo-1632605166776-7128669886e7",
-      "w": 1400,
-      "h": 1050,
-      "alt": "Blue film being laid onto a bonnet"
-    },
-    {
       "out": "modification/alloy-caliper.jpg",
       "id": "photo-1484136540910-d66bb475348d",
       "w": 1600,
       "h": 1200,
       "alt": "An alloy wheel with a yellow brake caliper behind it"
-    },
-    {
-      "out": "modification/alloy-bbs.jpg",
-      "id": "photo-1614689304159-273632ab5c5a",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A multi-spoke alloy wheel and red brake caliper"
-    },
-    {
-      "out": "modification/alloy-premium.jpg",
-      "id": "photo-1611838608826-4c32a6160d90",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A performance alloy wheel with a gold caliper"
     },
     {
       "out": "modification/headlight.jpg",
@@ -122,32 +66,11 @@
       "alt": "A headlight with a bright LED ring on a green car"
     },
     {
-      "out": "misc/showcase-red.jpg",
-      "id": "photo-1708516893277-232fb2bfb198",
-      "w": 1600,
-      "h": 1067,
-      "alt": "A red sports car under a single overhead light"
-    },
-    {
       "out": "modification/interior-red.jpg",
       "id": "photo-1629838978692-40a61bf66f7b",
       "w": 1600,
       "h": 1200,
       "alt": "A cabin trimmed in red diamond-stitched leather"
-    },
-    {
-      "out": "modification/interior-white.jpg",
-      "id": "photo-1643142314404-32a911f3ede2",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A seat trimmed in quilted white leather"
-    },
-    {
-      "out": "modification/interior-black.jpg",
-      "id": "photo-1614530499660-fe1fbd7921d6",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A black leather cabin with the steering wheel in view"
     },
     {
       "out": "wash/foam-bay.jpg",
@@ -178,53 +101,11 @@
       "alt": "A red alloy wheel being cleaned with a brush"
     },
     {
-      "out": "wash/steam.jpg",
-      "id": "photo-1575844611398-2a68400b437c",
-      "w": 1600,
-      "h": 1067,
-      "alt": "A white car in a wash bay surrounded by steam"
-    },
-    {
-      "out": "wash/hand-wash.jpg",
-      "id": "photo-1694678505383-676d78ea3b96",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A car being washed by hand with a sponge"
-    },
-    {
-      "out": "wash/foam-front.jpg",
-      "id": "photo-1694025893767-9a212606fbc5",
-      "w": 1600,
-      "h": 1200,
-      "alt": "Foam sliding down the front of a dark car"
-    },
-    {
-      "out": "wash/wheel-foam-dark.jpg",
-      "id": "photo-1708805283017-c662be2c7a44",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A foam-covered wheel against a black background"
-    },
-    {
-      "out": "wash/polish-wheel.jpg",
-      "id": "photo-1708805282683-50a060eba80f",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A gloved hand polishing a wheel"
-    },
-    {
       "out": "wash/polishing.jpg",
       "id": "photo-1708805282695-ef186db20192",
       "w": 1600,
       "h": 1200,
       "alt": "A machine polisher being used on bodywork"
-    },
-    {
-      "out": "wash/polish-panel.jpg",
-      "id": "photo-1620584898989-d39f7f9ed1b7",
-      "w": 1400,
-      "h": 1050,
-      "alt": "A polisher working across a dark panel"
     },
     {
       "out": "wash/coating.jpg",
@@ -241,20 +122,6 @@
       "alt": "The inside of a car being cleaned"
     },
     {
-      "out": "misc/detail-lights.jpg",
-      "id": "photo-1569929712408-ed9914033d52",
-      "w": 1800,
-      "h": 1013,
-      "alt": "Strip lights reflected along the side of a dark car"
-    },
-    {
-      "out": "misc/rear-detail.jpg",
-      "id": "photo-1776043904123-0988a0c3c60c",
-      "w": 1600,
-      "h": 1067,
-      "alt": "A dark SUV lit from one side in a studio"
-    },
-    {
       "out": "hero/head-service.jpg",
       "id": "photo-1786198984387-b63cdf520602",
       "w": 2560,
@@ -267,13 +134,6 @@
       "w": 2560,
       "h": 1707,
       "alt": "A black Mahindra Thar with custom wheels and bumper"
-    },
-    {
-      "out": "hero/head-modify-flames.jpg",
-      "id": "photo-1663490669896-01c6ae0746e2",
-      "w": 2560,
-      "h": 1829,
-      "alt": "A modified car shooting flames from both exhausts in front of a crowd"
     },
     {
       "out": "hero/head-wash.jpg",
@@ -304,27 +164,6 @@
       "alt": "A modified Mahindra Thar on a road"
     },
     {
-      "out": "misc/innova.jpg",
-      "id": "photo-1748215210939-ad8b6c8c086d",
-      "w": 1600,
-      "h": 1200,
-      "alt": "A white Toyota Innova parked outside a building"
-    },
-    {
-      "out": "hero/garage-hero.jpg",
-      "id": "photo-1791419542289-693087bd1044",
-      "w": 2560,
-      "h": 1120,
-      "alt": "A car raised on a workshop lift with its bonnet open"
-    },
-    {
-      "out": "hero/garage-hero-portrait.jpg",
-      "id": "photo-1714173417479-f39003aa1f2f",
-      "w": 1080,
-      "h": 1920,
-      "alt": "A white hatchback inside a clean, brightly lit workshop"
-    },
-    {
       "out": "accessories/alloy-gold.jpg",
       "id": "photo-1770327714979-f662b6e711f2",
       "w": 1000,
@@ -332,25 +171,11 @@
       "alt": "A gold multi-spoke alloy wheel"
     },
     {
-      "out": "accessories/exhaust-carbon.jpg",
-      "id": "photo-1692309175422-b9d614f4764e",
-      "w": 1000,
-      "h": 1250,
-      "alt": "Twin exhaust tips with carbon-fibre sleeves"
-    },
-    {
       "out": "accessories/led-headlight.jpg",
       "id": "photo-1616761879141-f485e5fed5df",
       "w": 1000,
       "h": 1250,
       "alt": "An LED headlight and daytime running light on a grey car"
-    },
-    {
-      "out": "accessories/sport-seats.jpg",
-      "id": "photo-1611251953880-611e66e904e9",
-      "w": 1000,
-      "h": 1250,
-      "alt": "Black sport seats with red hexagon stitching"
     },
     {
       "out": "accessories/exhaust-carbon-wide.jpg",

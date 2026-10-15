@@ -19,14 +19,10 @@
  *  Each of these is a guess or a gap. Replace, then delete the flag.
  * ------------------------------------------------------------------ */
 export const UNCONFIRMED = {
-  /** Google shows "Closes 8:30 pm". The opening time is a guess. */
-  openingTime: '9:30 am',
+  /** Confirmed by the owner: 8 am to 8:30 pm. */
+  openingTime: '8:00 am',
   /** No weekly off is listed on the profile. Assumed open daily. */
   weeklyOff: null as string | null,
-  /** Whether the wash centre has a separate phone line. Its Google
-   *  listing ("Cr Express Car Washing Centre") shows 095384 68778; the site
-   *  still sends wash calls to the main line until the owner says which. */
-  washBranchPhone: true,
   /** Years in business, cars serviced — nothing to cite yet. */
   trackRecord: true,
 } as const;
@@ -92,7 +88,7 @@ export const BUSINESS = {
     },
     {
       id: 'wash',
-      name: 'Car Wash Centre',
+      name: 'CR Express Car Wash',
       short: 'Wash Centre',
       blurb: 'Every kind of wash, polish and interior clean, for every car.',
       /* From its Google listing, "Cr Express Car Washing Centre" — about
@@ -106,8 +102,9 @@ export const BUSINESS = {
       plusCode: 'RM97+R2 Hebbagodi, Karnataka',
       mapsUrl:
         'https://www.google.com/maps/place/Cr+Express+Car+Washing+Centre/@12.819532,77.6625106,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae6c71a16db97d:0x38da3140bf4631b9!8m2!3d12.819532!4d77.6625106!16s%2Fg%2F11s3zcjh_2',
-      phone: '07022846611',
-      phoneDisplay: '070228 46611',
+      /* Its own line, from its Google listing (confirmed by the owner). */
+      phone: '09538468778',
+      phoneDisplay: '095384 68778',
     },
   ],
 
@@ -123,11 +120,11 @@ export const BUSINESS = {
         'Saturday',
         'Sunday',
       ],
-      opens: '09:30',
+      opens: '08:00',
       closes: '20:30',
     },
   ],
-  hoursDisplay: 'Open daily · 9:30 am – 8:30 pm',
+  hoursDisplay: 'Open daily · 8 am – 8:30 pm',
 
   /** Used in the "we cover" line on the contact page. */
   servingAreas: [

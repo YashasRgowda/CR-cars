@@ -18,7 +18,7 @@ import { CallButton, WhatsAppButton } from '@/components/ui/buttons';
 export const metadata: Metadata = {
   title: 'Contact & Location',
   description:
-    'CR Cars is on Thirupalya Main Road, Bommasandra, Bengaluru 560099. Open daily 9:30 am to 8:30 pm. Call 070228 46611 or message on WhatsApp.',
+    'CR Cars is on Thirupalya Main Road, Bommasandra, Bengaluru 560099. Open daily 8 am to 8:30 pm. Call 070228 46611 or message on WhatsApp.',
   alternates: { canonical: '/contact' },
 };
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
                       <dd className="mt-1">
                         <a
                           href={telHref()}
-                          className="font-mono text-sm text-ink-900 transition-colors hover:text-brass-ink"
+                          className="-my-3 inline-block py-3 font-mono text-sm text-ink-900 transition-colors hover:text-brass-ink"
                         >
                           {BUSINESS.phoneDisplay}
                         </a>

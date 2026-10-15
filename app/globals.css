@@ -135,41 +135,6 @@
     }
   }
 
-  /* Hero two-tone type, wide screens only. The masks are traced from
-     garage-hero.jpg by scripts/make-hero-mask.py; `cover` plus the same
-     left anchor as the photo's object-position puts them on the
-     photograph exactly, so ink shows only over the wall and paper only
-     over the brick. Change the photo's crop in Hero.tsx and these must
-     change with it.
-
-     Tall screens get the portrait photograph, whose wall is light all
-     the way across: the ink copy is shown unmasked, the paper copy not
-     at all. */
-  @media (orientation: landscape) {
-    .hero-mask-light,
-    .hero-mask-dark {
-      -webkit-mask-size: cover;
-      mask-size: cover;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-position: 0% 50%;
-      mask-position: 0% 50%;
-    }
-    .hero-mask-light {
-      -webkit-mask-image: url('/images/hero/hero-mask-light.png');
-      mask-image: url('/images/hero/hero-mask-light.png');
-    }
-    .hero-mask-dark {
-      -webkit-mask-image: url('/images/hero/hero-mask-dark.png');
-      mask-image: url('/images/hero/hero-mask-dark.png');
-    }
-  }
-  @media (orientation: portrait) {
-    .hero-mask-dark {
-      display: none;
-    }
-  }
-
   /* ---------------------------------------------------------------
      Surfaces & materials
      --------------------------------------------------------------- */

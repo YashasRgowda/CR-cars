@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import Logo from '@/components/brand/Logo';
 import WhatsAppMark from '@/components/icons/WhatsAppMark';
-import { BUSINESS } from '@/lib/business';
 
 const LINKS = [
   { href: '/services', label: 'Car Service' },
-  { href: '/modification', label: 'Modification' },
-  { href: '/car-wash', label: 'Car Wash' },
+  { href: '/modification', label: 'CR Customs' },
+  { href: '/car-wash', label: 'CR Express Wash' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -37,19 +36,20 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-9 lg:px-10">
         <div className="flex flex-col items-center justify-between gap-5 text-sm text-muted sm:flex-row">
           <Link href="/" aria-label="CR Cars — home">
-            <Logo />
+            <Logo variant="full" />
           </Link>
 
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <nav className="-my-2.5 flex flex-wrap justify-center gap-x-6">
             {LINKS.map((l) => (
-              <Link key={l.href} href={l.href} className="transition-colors hover:text-ink-900">
+              <Link key={l.href} href={l.href} className="inline-block py-2.5 transition-colors hover:text-ink-900">
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          <p className="text-center sm:text-right">
-            © {new Date().getFullYear()} {BUSINESS.name}, {BUSINESS.city}.
+          {/* NEEDS CONFIRMATION: the founding year. */}
+          <p className="text-center font-display text-base italic text-ink-800 sm:text-right">
+            Electronic City · Since 2020
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${MAKER.label} — message us on WhatsApp`}
-            className="group inline-flex items-center gap-2 text-[11px] text-muted transition-colors duration-300 hover:text-brass-ink"
+            className="group -my-3 inline-flex items-center gap-2 py-3 text-[11px] text-muted transition-colors duration-300 hover:text-brass-ink"
           >
             <WhatsAppMark className="h-3.5 w-3.5 transition-transform duration-300 ease-premium group-hover:scale-110" />
             {MAKER.label}

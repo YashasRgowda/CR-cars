@@ -12,8 +12,8 @@ import { BUSINESS } from '@/lib/business';
 const NAV = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Car Service' },
-  { href: '/modification', label: 'Modification' },
-  { href: '/car-wash', label: 'Car Wash' },
+  { href: '/modification', label: 'CR Customs' },
+  { href: '/car-wash', label: 'CR Express Wash' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -82,7 +82,7 @@ export default function Navbar() {
             : 'border-transparent bg-paper-100'
       }`}
     >
-      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-5 lg:px-10">
+      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-5 sm:gap-6 lg:px-10">
         <Link href="/" aria-label="CR Cars — home" className="shrink-0">
           <Logo />
         </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
-          className="grid h-10 w-10 place-items-center rounded-full border border-line-strong text-ink-900 transition-colors xl:hidden"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line-strong text-ink-900 transition-colors xl:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>

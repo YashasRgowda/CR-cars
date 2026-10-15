@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { MapPin, Phone } from 'lucide-react';
-import { BUSINESS, formatAddress, serviceBranch, washBranch } from '@/lib/business';
+import { formatAddress, serviceBranch, washBranch } from '@/lib/business';
 import { telHref } from '@/lib/contact';
 import { Eyebrow, Reveal } from '@/components/ui/motion';
 
@@ -42,6 +42,8 @@ export default function Branches() {
             blurb={serviceBranch.blurb}
             address={formatAddress(serviceBranch)}
             mapsUrl={serviceBranch.mapsUrl}
+            phone={serviceBranch.phone}
+            phoneDisplay={serviceBranch.phoneDisplay}
             delay={0}
           />
           <BranchCard
@@ -51,6 +53,8 @@ export default function Branches() {
             blurb={washBranch.blurb}
             address={formatAddress(washBranch)}
             mapsUrl={washBranch.mapsUrl}
+            phone={washBranch.phone}
+            phoneDisplay={washBranch.phoneDisplay}
             delay={0.08}
           />
         </div>
@@ -66,6 +70,8 @@ function BranchCard({
   blurb,
   address,
   mapsUrl,
+  phone,
+  phoneDisplay,
   delay,
 }: {
   image: string;
@@ -74,6 +80,8 @@ function BranchCard({
   blurb: string;
   address: string;
   mapsUrl: string | null;
+  phone: string;
+  phoneDisplay: string;
   delay: number;
 }) {
   return (
@@ -99,11 +107,11 @@ function BranchCard({
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <a
-              href={telHref()}
+              href={telHref(phone)}
               className="inline-flex items-center gap-2 rounded-full bg-ink-900 px-5 py-2.5 text-sm font-500 text-paper-100 transition-transform duration-300 ease-premium hover:scale-[1.03]"
             >
               <Phone className="h-4 w-4" />
-              {BUSINESS.phoneDisplay}
+              {phoneDisplay}
             </a>
             {mapsUrl && (
               <a

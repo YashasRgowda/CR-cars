@@ -31,7 +31,7 @@ const POINTS = [
   {
     icon: Clock,
     title: 'Open every day',
-    line: 'Seven days a week, 9:30 am to 8:30 pm.',
+    line: 'Seven days a week, 8 am to 8:30 pm.',
   },
   {
     icon: Truck,

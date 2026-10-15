@@ -97,8 +97,8 @@ export default function ServicePage({
       </section>
 
       <CtaBand
-        title={`Ask about ${group.name.toLowerCase()}`}
-        message={`Hi, I would like to ask about ${group.name.toLowerCase()} for my car.`}
+        title={`Ask about ${group.name}`}
+        message={`Hi, I would like to ask about ${group.name} for my car.`}
       />
     </>
   );

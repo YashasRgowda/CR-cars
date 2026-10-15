@@ -68,7 +68,7 @@ export default function WhatWeDo() {
                   <span className="text-[11px] font-500 uppercase tracking-eyebrow text-brass-ink">
                     {group.eyebrow}
                   </span>
-                  <h3 className="mt-3 font-display text-2xl text-ink-900">
+                  <h3 className="mt-3 font-display text-[2rem] leading-[1.05] text-ink-900 lg:text-[2.35rem]">
                     {group.name}
                   </h3>
                   <p className="mt-2.5 flex-1 text-pretty text-sm leading-relaxed text-muted">

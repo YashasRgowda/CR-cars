@@ -101,7 +101,7 @@ export const SERVICING: ServiceGroup = {
  * ------------------------------------------------------------------ */
 export const MODIFICATION: ServiceGroup = {
   slug: 'modification',
-  name: 'Modification',
+  name: 'CR Customs',
   eyebrow: 'Custom Work',
   promise: 'All types of modification, done properly.',
   intro: [
@@ -139,7 +139,7 @@ export const MODIFICATION: ServiceGroup = {
  * ------------------------------------------------------------------ */
 export const WASH: ServiceGroup = {
   slug: 'car-wash',
-  name: 'Car Wash',
+  name: 'CR Express Car Wash',
   eyebrow: 'Wash & Detailing',
   promise: 'Every kind of wash, for every kind of car.',
   intro: [

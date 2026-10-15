@@ -40,7 +40,8 @@ export function LocalBusinessJsonLd({ siteUrl }: { siteUrl: string }) {
     description: BUSINESS.tagline,
     url: siteUrl,
     telephone: `+91${BUSINESS.phone.replace(/^0/, '')}`,
-    image: `${siteUrl}/images/hero/garage-hero.jpg`,
+    // The owner's own photograph of the frontage, signboard and all.
+    image: `${siteUrl}/images/hero/showroom-hero-v2.jpg`,
     logo: `${siteUrl}/brand/icon-512.png`,
     priceRange: '₹₹',
     currenciesAccepted: 'INR',
