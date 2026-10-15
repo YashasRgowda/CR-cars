@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import Logo from '@/components/brand/Logo';
 import WhatsAppMark from '@/components/icons/WhatsAppMark';
 
@@ -10,15 +11,21 @@ const LINKS = [
 ];
 
 /**
- * Who built the site — the same quiet credit as on Kushi Cars. A WhatsApp
- * hand-off rather than a homepage link, because the shop owner it is aimed
- * at will send a message tonight and will not fill in a form tomorrow; the
- * opening line names the site, so the message is answerable straight away.
+ * Who built the site, and the way to reach them.
+ *
+ * Aimed at the other shop owners who scroll to the bottom thinking "I
+ * want one of these". A plain credit line did not read as clickable, so it
+ * is a question and a button: "Want a website like this?" says why you
+ * would tap, and the pill says exactly what happens — a WhatsApp chat with
+ * the team, already typed. The green "online" dot says someone will answer.
+ * It still sits below the rule, smaller than anything of the shop's own,
+ * so it promotes the team without competing with the business.
  */
 const MAKER = {
-  label: 'Made by team svayam.ai',
+  name: 'team svayam.ai',
   phone: '918095762180',
-  message: "Hi Svayam, I saw the CR Cars website and I'd like a website like that for my business.",
+  message:
+    "Hi Svayam team, I saw the CR Cars website and I'd like a website like that for my business.",
 };
 
 /**
@@ -53,18 +60,27 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Deliberately the quietest thing on the page: below the rule, in
-            the muted tier, brass only under the cursor. */}
-        <div className="mt-6 border-t border-line-soft pt-6 text-center">
+        <div className="mt-6 flex flex-col items-center justify-center gap-2.5 border-t border-line-soft pt-6 sm:flex-row sm:gap-3.5">
+          <span className="text-[13px] text-muted">Want a website like this?</span>
           <a
             href={`https://wa.me/${MAKER.phone}?text=${encodeURIComponent(MAKER.message)}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${MAKER.label} — message us on WhatsApp`}
-            className="group -my-3 inline-flex items-center gap-2 py-3 text-[11px] text-muted transition-colors duration-300 hover:text-brass-ink"
+            aria-label={`Chat with ${MAKER.name} on WhatsApp`}
+            className="group inline-flex items-center gap-2.5 rounded-full border border-line-strong bg-paper py-2 pl-3 pr-4 text-[13px] font-500 text-ink-900 shadow-card transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:border-ink-900 hover:shadow-lift"
           >
-            <WhatsAppMark className="h-3.5 w-3.5 transition-transform duration-300 ease-premium group-hover:scale-110" />
-            {MAKER.label}
+            <span className="relative grid h-6 w-6 place-items-center rounded-full bg-[#25D366] text-white">
+              <WhatsAppMark className="h-3.5 w-3.5" />
+              {/* "Online" — someone will answer. */}
+              <span className="absolute -right-0.5 -top-0.5 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-60 motion-reduce:animate-none" />
+                <span className="relative inline-flex h-2 w-2 rounded-full border border-paper bg-[#25D366]" />
+              </span>
+            </span>
+            <span>
+              Chat with <span className="font-600">{MAKER.name}</span>
+            </span>
+            <ArrowUpRight className="h-3.5 w-3.5 text-muted transition-all duration-300 ease-premium group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink-900" />
           </a>
         </div>
       </div>
