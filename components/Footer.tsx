@@ -59,20 +59,23 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="mt-6 border-t border-line-soft pt-5 text-center text-xs text-muted">
-          Want a website like this?{' '}
+        {/* One row, everything on the same centre line: the question, a
+            hairline, then icon + link + arrow as a single unit. */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 border-t border-line-soft pt-5 text-[13px] leading-none">
+          <span className="text-muted">Want a website like this?</span>
+          <span className="hidden h-3.5 w-px bg-line-strong sm:block" aria-hidden />
           <a
             href={`https://wa.me/${MAKER.phone}?text=${encodeURIComponent(MAKER.message)}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Chat with ${MAKER.name} on WhatsApp`}
-            className="group -my-3 inline-flex items-center gap-1.5 py-3 font-500 text-ink-700 transition-colors duration-300 hover:text-ink-900"
+            className="group inline-flex items-center gap-2 py-2.5 font-500 text-ink-700 transition-colors duration-300 hover:text-ink-900"
           >
-            <WhatsAppMark className="h-3.5 w-3.5 text-muted transition-colors duration-300 group-hover:text-[#25D366]" />
-            <span className="underline decoration-brass/60 decoration-1 underline-offset-[3px] transition-colors group-hover:decoration-brass">
+            <WhatsAppMark className="h-4 w-4 shrink-0 text-[#25D366]/80 transition-colors duration-300 group-hover:text-[#25D366]" />
+            <span className="border-b border-brass/50 pb-0.5 transition-colors duration-300 group-hover:border-brass">
               Chat with {MAKER.name}
             </span>
-            <ArrowUpRight className="h-3 w-3 transition-transform duration-300 ease-premium group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-muted transition-all duration-300 ease-premium group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink-900" />
           </a>
         </div>
       </div>
