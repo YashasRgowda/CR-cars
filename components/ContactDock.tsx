@@ -19,13 +19,28 @@ import { telHref, waHref } from '@/lib/contact';
  * anybody sees.
  */
 export default function ContactDock() {
-  const [show, setShow] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [atEnd, setAtEnd] = useState(false);
+  const show = pastHero && !atEnd;
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 520);
+    const onScroll = () => setPastHero(window.scrollY > 520);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  /* It also steps aside at the end of the page. By then the call-to-action
+     band has just offered the same two buttons in full, and on a phone the
+     dock would otherwise sit on top of the footer's links and credit. */
+  useEffect(() => {
+    const target = document.querySelector('footer');
+    if (!target) return;
+    const io = new IntersectionObserver(([entry]) => setAtEnd(entry.isIntersecting), {
+      rootMargin: '0px 0px -40px 0px',
+    });
+    io.observe(target);
+    return () => io.disconnect();
   }, []);
 
   return (

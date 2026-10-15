@@ -40,12 +40,12 @@ export default function Footer() {
   return (
     <footer className="border-t border-line-soft">
       <div className="mx-auto max-w-7xl px-5 py-9 lg:px-10">
-        <div className="flex flex-col items-center justify-between gap-5 text-sm text-muted sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 text-sm text-muted sm:flex-row sm:gap-5">
           <Link href="/" aria-label="CR Cars — home">
             <Logo variant="full" />
           </Link>
 
-          <nav className="-my-2.5 flex flex-wrap justify-center gap-x-6">
+          <nav className="-my-2.5 grid grid-cols-2 gap-x-10 text-center sm:flex sm:flex-wrap sm:justify-center sm:gap-x-6">
             {LINKS.map((l) => (
               <Link key={l.href} href={l.href} className="inline-block py-2.5 transition-colors hover:text-ink-900">
                 {l.label}
@@ -59,9 +59,9 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* One row, everything on the same centre line: the question, a
-            hairline, then icon + link + arrow as a single unit. */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 border-t border-line-soft pt-5 text-[13px] leading-none">
+        {/* Laptop: one row on a single centre line — the question, a hairline,
+            then icon + link + arrow. Phone: the question stacked over the link. */}
+        <div className="mt-6 flex flex-col items-center justify-center gap-1 border-t border-line-soft pt-5 text-[13px] leading-none sm:flex-row sm:gap-4">
           <span className="text-muted">Want a website like this?</span>
           <span className="hidden h-3.5 w-px bg-line-strong sm:block" aria-hidden />
           <a
