@@ -41,7 +41,7 @@ export function LocalBusinessJsonLd({ siteUrl }: { siteUrl: string }) {
     url: siteUrl,
     telephone: `+91${BUSINESS.phone.replace(/^0/, '')}`,
     // The owner's own photograph of the frontage, signboard and all.
-    image: `${siteUrl}/images/hero/showroom-hero-v2.jpg`,
+    image: `${siteUrl}/images/hero/showroom-hero-v3.jpg`,
     logo: `${siteUrl}/brand/icon-512.png`,
     priceRange: '₹₹',
     currenciesAccepted: 'INR',

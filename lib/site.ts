@@ -19,5 +19,11 @@ export const siteUrl = normalise(
   // an empty string is not null, so `??` would keep the blank and every
   // absolute URL on the site would come out as a bare path.
   process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
+    // The live domain, so production canonicals and link previews never
+    // point at a throwaway *.vercel.app address even if the variable is unset.
+    (process.env.VERCEL_ENV === 'production'
+      ? 'https://www.crcarservicecenter.com'
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : 'http://localhost:3000'),
 );

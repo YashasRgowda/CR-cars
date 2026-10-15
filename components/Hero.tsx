@@ -23,7 +23,7 @@ import GoogleMark from '@/components/icons/GoogleMark';
  * 12% from the top, so it takes the sky, a little, and the forecourt,
  * mostly — never the signboard.
  */
-const PHOTO = '/images/hero/showroom-hero-v2.jpg';
+const PHOTO = '/images/hero/showroom-hero-v3.jpg';
 
 export default function Hero() {
   return (
